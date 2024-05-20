@@ -7,7 +7,11 @@ def home():
 
 @app.route("/api/v1/<word>")
 def dictionary(word):
-    return word.capitalize()
+    defination = word.capitalize()
+    return {
+        "defination": defination,
+        "word":word
+    }
 
 app.run(debug=True,port=5001) #if port is occupied, we can run like this\
 
